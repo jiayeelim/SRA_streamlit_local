@@ -1,7 +1,7 @@
 import streamlit as st
 import pymongo
 
-client = pymongo.MongoClient("mongodb://localhost:27017/")
+client = pymongo.MongoClient("mongodb://jiayeelim:@127.0.0.1")
 db = client["SRA"]
 
 # Accept user input
