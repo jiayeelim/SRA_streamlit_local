@@ -1,8 +1,14 @@
 import streamlit as st
 import pymongo
 
-client = pymongo.MongoClient("mongodb://jiayeelim:@127.0.0.1")
-db = client["SRA"]
+#client = pymongo.MongoClient("mongodb://jiayeelim:@127.0.0.1")
+#db = client["SRA"]
+
+def init_connection():
+    return pymongo.MongoClient(**st.secrets["mongo"])
+
+client = init_connection()
+db = client.SRA
 
 # Accept user input
 user_input = st.text_input("Enter data to be stored in MongoDB:")
